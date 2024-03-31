@@ -1,0 +1,96 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    background-color: #f8f9fa;
+    height: 80px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: calc(100% - 80px); /* 减去header的高度 */
+}
+
+.left {
+    width: 10%;
+    height: 100%;
+    padding: 25px;
+    background-color: #f5f5f5;
+}
+.left ul {
+    list-style-type: none;
+    padding: 0;
+}
+.left li {
+    color: rgb(125, 124, 124);
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.right {
+    background-color: #ffffff;
+    width: 90%;
+    height: 100%;
+}
+#attendanceTable {
+border-collapse: collapse;
+width: 100%;
+}
+#attendanceTable th, td {
+    text-align: left;
+    padding: 20px;
+    border-bottom: 5px solid #ddd;
+}
+#attendanceTable th{
+    background-color: #f2f2f2;
+    font-size: 20px;
+    color: rgb(125, 124, 124);
+
+}
+#attendanceTable tr:hover {background-color: #f5f5f5;}
+
+/*按钮设置*/
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition-duration: 0.4s;
+
+
+}
+.home-button:hover {
+    background-color: darkblue;
+    color: white;
+
+}
+.footer {
+    text-align: center; /* 这将使.footer内的内容右对齐 */
+}
+.input-container {
+    position: relative;
+    top:30px;
+    display: inline-block;
+    margin-right: 50px; /* 调整输入框之间的间距 */
+}
+
+.input-box {
+    width: 170px;
+    height: 35px;
+    padding: 5px;
+    margin-right: 10px;
+    box-sizing: border-box; /* 确保宽度和高度包含内边距和边框 */
+}
+/* 最后一个输入框不需要右边距 */
+.input-container:last-child .input-box {
+    margin-right: 0;
+}

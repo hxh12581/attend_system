@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>head</title>
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+</head>
+<body>
+<div class="nav">
+  <ul>
+      <li><a href="{% url 'index' %}" style="text-decoration: none;">首页</a></li>
+      <li><a href="{% url 'employ_message' %}" style="text-decoration: none;">账号管理</a></li>
+      <li><a href="{% url 'attend_message' %}" style="text-decoration: none;">考勤</a></li>
+      <li><a href="{% url 'leave_message' %}" style="text-decoration: none;">请假</a></li>
+      <li><a style="color: #FFFFFF">欢迎{{ employ_name }}登录! </a></li>
+      <li><span><a href="{% url 'loginout' %}" style="color: #FFFFFF">退出系统</a></span></li>
+  </ul>
+</div>
+</body>
+</html>

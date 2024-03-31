@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工请假管理</title>
+    <link rel="stylesheet" href="{% static 'css/attend.css' %}">
+</head>
+{% include 'head.html' %}
+<body>
+    <div class="header">
+        <!-- 页面的上面部分 -->
+        <h1 style="padding-top: 20px;padding-left: 20px;margin-top: 0px;">员工请假管理</h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <!-- 页面的左边部分 -->
+            <ul>
+                <li><a href="{% url 'leave_add_show' %}" class="home-button">请假</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <!-- 页面的右边部分 -->
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>员工号</th>
+                        <th>员工姓名</th>
+                        <th>请假事由</th>
+                        <th>请假状态</th>
+                        <th>请假原因</th>
+                        <th>开始时间</th>
+                        <th>结束时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in message %}
+                    <tr>
+                        <td>{{ m.id}}</td>
+                        <td>{{ m.leave_id}}</td>
+                        <td>{{ m.leave_name }}</td>
+                        <td>{{ m.leave_statu }}</td>
+                        <td>{{ m.leave_statu_reason }}</td>
+                        <td>{{ m.leave_reason }}</td>
+                        <td>{{ m.leave_stime}}</td>
+                        <td>{{ m.leave_etime}}</td>
+{#                        <td><a href="{% url 'leave_update_show' m.leave_id %}?etime={{ m.leave_stime }}" class="home-button">修改</a></td>#}
+                        <td><a href="{% url 'leave_update_show' m.id %}" class="home-button">修改</a></td>
+                        <td><a href="{% url 'leave_pop' m.id %}" class="home-button">销假</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

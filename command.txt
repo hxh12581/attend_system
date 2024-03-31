@@ -1,0 +1,17 @@
+1.创建App应用->python manage.py startapp index(应用名)
+2.查看内置的操作命令->python manage.py help
+3.访问映射:urls->views->templates
+4.校验安装是否成功:django.__version__
+5.wsgi.py->Python服务器网关接口:是Python应用与Web服务器之间的接口
+6.默认访问应用APP里的static文件里的静态资源
+7.python manage.py makemigrations 数据迁移命令
+8.python manage.py migrate # 创建内置功能的数据表
+9.python manage.py migrate index 0001_initial #指定文件创建内置数据表
+10.python manage.py sqlmigrate index 0001_initial #将py文件转换成SQL语句
+11.python manage.py dumpdata>data.json #导出数据表/文件名
+11.python manage.py migrate dumpdata index>data.json #导出项目应用index的所有数据
+12.python manage.py migrate dumpdata index.PersonInfo>data.json #导出项目应用index的模型PersonInfo的所有数据
+13.python manage.py loaddata data.json #将导入的数据文件重新导入数据库里
+14.python manage.py shell #启动Shell模式
+15.python manage.py migrare  --database=db1 / python manage.py migrare  --database=db2 # 多数据库的迁移
+16.python manage.py createsuperuser # 创建超级管理员账号和密码

@@ -1,0 +1,71 @@
+/* employ_message.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333; /* 主文本颜色 */
+}
+
+.container {
+    width: 90%;
+    max-width: 600px; /* 容器最大宽度，适应不同屏幕 */
+    margin: 40px auto; /* 在页面中居中显示 */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* 给容器加点轻微的阴影 */
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px; /* 给标题和表单之间一些间距 */
+}
+
+/* 表单样式 */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 每个表单元素间的间隔 */
+}
+
+label {
+    font-weight: bold; /* 粗体标签 */
+    margin-bottom: 5px; /* 标签下的边距 */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select,
+button,
+input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ddd; /* 输入框边框 */
+    border-radius: 5px; /* 边角圆滑 */
+    outline: none; /* 去除焦点轮廓 */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #5cb85c; /* 聚焦时变更边框颜色 */
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 10px 15px;
+    background-color: #5cb85c; /* 按钮背景色 */
+    color: #fff; /* 按钮文本颜色 */
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* 鼠标悬浮时变成手指指针 */
+    font-size: 16px;
+    margin-top: 10px; /* 与上个元素的间距 */
+}
+
+.btn:hover {
+    background-color: #4cae4c; /* 鼠标悬浮时的背景色 */
+}

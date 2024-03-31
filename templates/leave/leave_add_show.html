@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/attend.css' %}" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .right {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        input, select, textarea {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工考勤管理</title>
+</head>
+{% include 'head.html' %}
+<body>
+    <div class="header">
+        <h1>请假</h1>
+    </div>
+    <div class="container">
+        <div class="right">
+            <form action="{% url 'leave_add' %}" id="attendanceForm" method="post">
+                {% csrf_token %}
+                <label for="employeeId">员工号:</label>
+                <input type="text" id="employeeId" name="leave_id" required>
+                <label for="employeeName">员工姓名:</label>
+                <input type="text" id="employeeName" name="leave_name" required>
+                <label for="reason">请假事由:</label>
+                <select id="leaveStatus" name="leave_statu_reason" required>
+                    <option value="approved">因私请假</option>
+                    <option value="rejected">因公请假</option>
+                </select>
+                <label for="leaveReason">请假原因:</label>
+                <textarea id="leaveReason" name="leave_reason" required></textarea>
+                <label for="startTime">开始时间:</label>
+                <input type="datetime-local" id="startTime" name="leave_stime" required>
+                <label for="endTime">结束时间:</label>
+                <input type="datetime-local" id="endTime" name="leave_etime" required>
+                <button type="submit">提交请假申请</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

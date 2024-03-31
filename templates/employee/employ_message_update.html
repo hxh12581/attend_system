@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑个人信息</title>
+    <link rel="stylesheet" href="{% static 'css/employ_message.css' %}">
+</head>
+<body>
+{% include 'head.html' %}
+<div class="container">
+    <h2>编辑个人信息</h2>
+    <form action="{% url 'employ_message_insert' %}" method="post">
+        {% csrf_token %}
+        <label for="employ_id">员工ID</label>
+        <input type="text" id="employ_id" name="employ_id" value="{{ employ_id }}" required>
+        <label for="employ_name">员工姓名</label>
+        <input type="text" id="employ_name" name="employ_name" value="{{ employ_name }}" required>
+        <label for="employ_age">员工年龄</label>
+        <input type="number" id="employ_age" name="employ_age">
+        <label for="employ_gender">员工性别</label>
+        <select id="employ_gender" name="employ_gender">
+            <option value="male">男</option>
+            <option value="female">女</option>
+        </select>
+        <label for="employ_phone">员工电话</label>
+        <input type="tel" id="employ_phone" name="employ_Phone">
+        <input type="submit" value="保存" class="btn">
+    </form>
+</div>
+</body>
+</html>

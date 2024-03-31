@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息管理</title>
+    <link rel="stylesheet" href="{% static 'css/attend.css' %}">
+</head>
+{% include 'head.html' %}
+<body>
+    <div class="header">
+        <!-- 页面的上面部分 -->
+        <h1 style="padding-top: 20px;padding-left: 20px;margin-top: 0px;">员工账号管理</h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <!-- 页面的左边部分 -->
+            <ul>
+                <li><a href="{% url 'employ_message_update' %}" class="home-button">编辑信息</a></li>
+                <li><a href="{% url 'employ_message_cancel' %}" class="home-button">注销账号</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <!-- 页面的右边部分 -->
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>员工号</th>
+                        <th>员工姓名</th>
+                        <th>年龄</th>
+                        <th>性别</th>
+                        <th>电话</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in message %}
+                    <tr>
+                        <td>{{ m.employ_id}}</td>
+                        <td>{{ m.employ_name }}</td>
+                        <td>{{ m.employ_age }}</td>
+                        <td>{{ m.employ_gender }}</td>
+                        <td>{{ m.employ_Phone }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

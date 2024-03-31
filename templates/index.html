@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/attend.css' %}" rel="stylesheet" type="text/css" />
+    <style>
+        .container {
+            position: relative;
+        }
+        .text {
+            position: absolute;
+            top: 40px; /* 调整顶部距离 */
+            left: 30px; /* 调整左边距 */
+            color: #1e1d1d; /* 文字颜色 */
+            font-size: 24px; /* 字体大小 */
+            font-weight: bold; /* 字体粗细 */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工考勤系统V1.0</title>
+</head>
+{% include 'head.html' %}
+<body>
+    <div class="container">
+        <img width="1430" height="670" src="{% static 'img/请坐.jpg' %}">
+        <div class="text">欢迎使用员工考勤管理系统！</div>
+    </div>
+</body>
+</html>

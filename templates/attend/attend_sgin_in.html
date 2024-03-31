@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/attend.css' %}" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工考勤管理</title>
+</head>
+{% include 'head.html' %}
+<body>
+    <div class="header">
+        <!-- 页面的上面部分 -->
+        <h1 style="padding-top: 20px;padding-left: 20px;margin-top: 0px;">员工考勤管理</h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <!-- 页面的左边部分 -->
+            <ul>
+                <li><a href="{% url 'attend_sign_in' %}" class="home-button">签到</a></li>
+                <li><a href="{% url 'attend_sign_out' %}" class="home-button">签退</a></li>
+                <li><a href="{% url 'attend_message' %}" class="home-button">查看考勤信息</a></li>
+            </ul>
+        </div>
+        <div class="right">
+                <form action="{% url 'sign' %}" id="attendanceForm" method="post">
+                    {% csrf_token %}
+                    <label for="signTime">签到时间:</label>
+                    <input type="datetime-local" id="signTime" name="sign_in" required>
+                    <button type="submit">签到</button>
+                </form>
+        </div>
+    </div>
+</body>
+</html>
